@@ -135,9 +135,11 @@ and points at the same directory.
 monitor in Margo 0.24.2 reads freed memory in
 `__margo_default_monitor_on_respond_cb` and takes a service down under
 concurrent load. Eight clients against one service reproduce it in seconds,
-and the address sanitizer names it. `DEFW2_MARGO_MONITOR=1` turns it on for
-a single-client run where its call paths are worth having. Our own spans
-cover the same ground and are on by default, so nothing else is lost.
+and the address sanitizer names it. Filed upstream as
+[mochi-hpc/mochi-margo#322](https://github.com/mochi-hpc/mochi-margo/issues/322), with a reproducer that needs nothing but
+Margo. `DEFW2_MARGO_MONITOR=1` turns it on for a single-client run where its
+call paths are worth having. Our own spans cover the same ground and are on
+by default, so nothing else is lost.
 
 ## Environment
 

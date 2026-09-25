@@ -55,6 +55,8 @@ static char *read_file(const struct defw2_rt *rt, const char *path)
  * memory in __margo_default_monitor_on_respond_cb and takes a service down
  * under concurrent load. Our own spans cover the same ground, so the
  * monitor waits behind DEFW2_MARGO_MONITOR until that is fixed upstream.
+ * Filed as mochi-hpc/mochi-margo issue 322:
+ * https://github.com/mochi-hpc/mochi-margo/issues/322
  */
 static bool want_margo_monitor(const defw2_config_t *cfg)
 {
